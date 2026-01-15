@@ -15,8 +15,6 @@ body {
 }
 
 header {
-    max-width: 1200px;
-    height: 250px;
     margin: 0 auto;
     position: relative;
     background:#99ABB5;
@@ -24,8 +22,29 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    max-width: 1200px;
+    height:250px;
+    background-color: #99ABB5;
+    animation: colorchange 5s ease; 
 }
 
+@keyframes colorchange{
+    0%{background-color: #99ABB5;}
+    10% {background-color:#7093A9;}
+    20%{background-color: #4E5C56;}
+    30%{background-color: #1e293b;}
+    40%{background-color: #1D2C26;}
+    50%{background-color: #99ABB5;}
+    60%{background-color: #7093A9;}
+    70%{background-color: #4E5C56;}
+    80%{background-color: #1e293b;}
+    90%{background-color: #1D2C26;}
+    100%{background-color: #99ABB5;}
+
+
+
+}
 
 h1 {
     font-family: 'Syne';
