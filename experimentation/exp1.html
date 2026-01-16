@@ -11,33 +11,20 @@
     <h2> Open the Console to see the functional code!</h2>
 
     <script>
-        var response = prompt("type something");
-        var words = response.split(" ");
-        
-        for(i=0; i < words.length; ){
 
+        for (var i = 1; i <= 100; i++) {
+            // i runs through numbers 1 to 100 when i is less than or equalt to 100. this included 100 to the sequence
+            if (i % 3 === 0) {
+                console.log("Fizz"); 
+                // if i is divisible by 3 without remaninder prints "Fizz"
+            } else if (i % 5 === 0) {
+                console.log("Buzz");
+                // otherwise if i is divisible by 5 without remaninder prints "Buzz"
+            } else {
+                console.log(i);
+                // if none of those are true just prints the number
+            }
         }
-
-    
-
-
-       
-
-     
-
-// .charAt
-// .slice   
-// .join    
-
-
-
-       
-
-
-
-
-
-
         
 
     </script>
