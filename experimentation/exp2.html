@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Selector</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            color: #dadada;
+            font-family: Open Sans;
+            text-align: center;
+            padding: 142px;
+            max-width: 1200px;
+
+        }
+        
+        h1 {
+            color: #dadada;
+            text-shadow: 2px 2px 8px rgb(0 0 0 / 80%);
+            font-family: Quintessential;
+            font-size: 4.5em;
+            text-align: center;
+            animation: fadeIn 6s;
+            margin: 10px;
+        }
+
+        h2{
+            color: #dadada;
+            text-shadow: 2px 2px 8px rgb(0 0 0 / 80%);
+            font-family: Open Sans;
+            font-size: 2em;
+            text-align: center;
+            margin: 10px;
+        }
+
+        
+        #message {
+            font-size: 1.5em;
+            margin: 40px;
+            padding: 20px;
+            background: rgb(38, 38, 38);
+            border-radius: 45px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Selector</h1>
+    <h2>Experiment Two</h2>
+    <div id="message"></div>
+
+    <script>
+        /*
+        Assignment: JS Experimentation - Functions & DOM
+
+        Using prompt() ask users to input their favorite color from a list of colors. Then change the background color of the page to that color.
+        */
+        
+        // Array of available colors
+        var colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink'];
+        
+        // Function 1: Checks if color is valid (returns true or false)
+        function isValidColor(userColor) {
+            for (var i = 0; i < colors.length; i++) {
+                if (colors[i] === userColor) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        // Function 2: Changes the background color
+        function changeBackground(color) {
+            document.body.style.backgroundColor = color;
+        }
+        
+        // Function 3: Main function 
+        function colorSelector() {
+            // asks user their name via this prompt
+            var userName = prompt("What's your name?");
+            
+            // asks user their favorite color via this prompt
+            var favoriteColor = prompt("What's your favorite color? Choose from: red, blue, green, yellow, purple, orange, pink");
+            
+            // Makes favortote color reponse lowercase
+            favoriteColor = favoriteColor.toLowerCase();
+            
+            // Checks if the color is valid this function
+            if (isValidColor(favoriteColor)) {
+                changeBackground(favoriteColor);
+                document.querySelector('#message').innerHTML = `Hello ${userName}! Your favorite color is ${favoriteColor}!`;
+            } else {
+                document.querySelector('#message').innerHTML = `Sorry ${userName}, ${favoriteColor} is not in our list. Please refresh and try again.`;
+            }
+        }
+        
+        // This starts the program
+        colorSelector();
+    </script>
+</body>
+</html>
