@@ -1,0 +1,397 @@
+/* ------------------------------------ Reset and Base Styles ------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins';
+    color: #2D3436;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* ------------------------------------ Header Styles ------------------------------------ */
+header {
+    text-align: center;
+    padding: 1em 1em 1em 1em;
+    background:#f3c233;
+    box-shadow: 0 4px 20px rgba(196, 69, 105, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+
+
+header h1 {
+    font-family: 'Merienda';
+    font-size: 2em;
+    font-weight: bold;
+    color: #7c301f;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.25rem;
+    letter-spacing: 2px;
+}
+
+
+header p {
+    font-size: 1em;
+    color: #2D3436;
+    font-weight: 400;
+    padding-top: 4px;
+}
+
+
+
+/* ------------------------------------ Main Content ------------------------------------ */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 2em;
+    position: relative;
+    z-index: 1;
+    max-height: none;
+    background:#c06c1c;
+}
+
+
+
+/* ------------------------------------ Floating Images ------------------------------------ */
+.floating-img {
+    position: absolute;
+    opacity: .75;
+    z-index: 0;
+    pointer-events: none;
+    width: 23%;
+    height: 50%;
+}
+
+.float-1 {
+    top: -9%;
+    left: 6%;
+    animation: float1 3s ease-in-out infinite;
+}
+
+.float-2 {
+    top: 19%;
+    right: -8%;
+    animation: float2 2s ease-in-out infinite;
+}
+
+.float-3 {
+    bottom: -9%;
+    left: 78%;
+    animation: float3 3.5s ease-in-out infinite;
+}
+
+.float-4 {
+    bottom: 1%;
+    right: 76%;
+    animation: float4 2.5s ease-in-out infinite;
+}
+
+.float-5 {
+    top: 2%;
+    left: 69%;
+    animation: float5 3.2s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(-5deg);
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(5deg);
+    }
+}
+
+@keyframes float3 {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(-3deg);
+    }
+}
+
+@keyframes float4 {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-35px) rotate(7deg);
+    }
+}
+
+@keyframes float5 {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-28px) rotate(-6deg);
+    }
+}
+
+
+
+/* ------------------------------------ Form Section ------------------------------------*/
+
+
+#form-section {
+    width: 100%;
+    max-width: 680px;
+    animation: fadeIn 0.5s ease-in;
+    position: relative;
+    z-index: 2;
+}
+
+#form-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ------------------------------------ Form Styles ------------------------------------ */
+form {
+    background: #f4e7c1;
+    padding: 2.2em;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(196, 69, 105, 0.3);
+    border: 3px solid #7c301f;
+    display: grid;           
+    grid-template-columns: 1fr 1fr;
+    gap: 1em 2em;
+}
+
+form h2 {
+    grid-column: 1 / -1; 
+    font-family: 'Merienda';
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #7c301f;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #FFC371;
+    text-align: center;
+}
+
+form div {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-items: center;  
+}
+
+form div label {
+    font-weight: 600;
+    color: #7c301f;
+    font-size: 0.9rem;
+    text-align: center;
+    padding-bottom: 3px;
+
+}
+
+
+
+/* ------------------------------------ Input Styles ------------------------------------ */
+input[type="text"] {
+    padding: 0.6em 0.85em;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-size: 0.80em;
+    background: rgba(255, 255, 255, 0.95);
+    color: #7c301f;
+    transition: all 0.3s ease;
+    width: 12pc;
+    text-align: center;
+}
+
+input[type="text"]::placeholder {
+    color: #7c301f;
+    font-style: italic;
+}
+
+
+
+/* ------------------------------------ On-click Text Focus ------------------------------------*/
+input[type="text"]:focus {
+    border: 2px solid #7c301f;   
+    transform: scale(1.02);
+    background: #f3c233;
+}
+
+
+
+/* ------------------------------------ Submit Button ------------------------------------ */
+input[type="submit"] {
+    grid-column: 1 / -1; 
+    width: 100%;
+    padding: 1em 2em;
+    background: #7c301f;
+    color: #f4e7c1;
+    border-radius: 15px;
+    font-family: 'Poppins';
+    font-size: 1.05em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    margin-top: 0.5em;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-6px);
+}
+
+input[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
+
+
+/* ------------------------------------ Story Overlay Section ------------------------------------ */
+
+
+#story-section {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    animation: overlayFadeIn 0.4s ease-in;
+}
+
+#story-section.active {
+    display: flex;
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.story-content {
+    background:#f4e7c1;
+    padding: 3rem;
+    border-radius: 25px;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 4px solid #7c301f;
+    animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.story-content h2 {
+    font-family: 'Merienda';
+    font-size: 2em;
+    color: #7c301f;
+    margin-bottom: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.story-text {
+    font-family: "Poppins";
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    color: #2D3436;
+}
+
+.story-text strong {
+    font-weight: 700;
+    color:#c06c1c;
+}
+
+
+
+/* ------------------------------------ Restart Button ------------------------------------ */
+#restart-btn {
+    display: block;
+    margin: 2em auto 0;
+    padding: 1em 2.5em;
+    background:#7c301f;
+    color: #f4e7c1;
+    border-radius: 15px;
+    font-family: 'Merienda';
+    font-size: 1.3em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+#restart-btn:hover {
+    transform: translateY(-3px) scale(1.10);
+}
+
+#restart-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+
+
+/* ------------------------------------ Footer ------------------------------------ */
+footer {
+    text-align: center;
+    padding: .75em;
+    background: #984835;
+    position: relative;
+    z-index: 1;
+}
+
+footer p {
+    font-family: 'Poppins';
+    font-size: 0.85em;
+    color: #f4e7c1;
+}
