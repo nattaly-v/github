@@ -26,6 +26,20 @@ header h1{
 
 }
 
+h3{
+    font-family: Syne;
+    color: #1B1B14ff;
+
+}
+
+figcaption{
+    font-style: italic;
+    font-family:'Syne';
+    color: #864A4Bff;
+padding-top: 20px;}
+
+
+
 article{
     padding: 2em;
     border-bottom: 3px solid #864A4Bff;
