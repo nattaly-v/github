@@ -6,6 +6,26 @@
     const formSection = document.querySelector('#form-section');
     const storySection = document.querySelector('#story-section');
     const restartBtn = document.querySelector('#restart-btn');
+
+
+
+     // _____________ Check if word starts with a vowel _____________
+     
+    function aOrAn(word) {
+        // Get the first letter
+        const firstLetter = word[0];
+        
+        // Make it lowercase
+        const lowerLetter = firstLetter.toLowerCase();
+        
+        // Check if it's a vowel
+        if(lowerLetter === 'a' || lowerLetter === 'e' || lowerLetter === 'i' || 
+           lowerLetter === 'o' || lowerLetter === 'u') {
+            return 'an';
+        } else {
+            return 'a';
+        }
+    }
     
     form.addEventListener('submit', function(event){
         event.preventDefault();
@@ -36,12 +56,12 @@
             
             // _____________ Fill in first paragraph _____________
 
-            storyParagraphs[0].innerHTML = `The other morning I woke up and chose to make a <strong>${adjective1}</strong> breakfast. I grabbed an <strong>${noun1}</strong> from the fridge and <strong>${verb1}</strong> it into the pan on the stove. Suddenly, <strong>${adjective2}</strong> <strong>${noun2}</strong> started flying everywhere!`;
+            storyParagraphs[0].innerHTML = `The other morning I woke up and chose to make ${aOrAn(adjective1)} <strong>${adjective1}</strong> breakfast. I grabbed ${aOrAn(noun1)} <strong>${noun1}</strong> from the fridge and <strong>${verb1}</strong> it into the pan on the stove. Suddenly, <strong>${adjective2}</strong> <strong>${noun2}</strong> started flying everywhere!`;
             
 
             // _____________ Fill in second paragraph _____________
 
-            storyParagraphs[1].innerHTML = `I quickly <strong>${verb2}</strong> toward the stove! Sadly, I was too late. The kitchen was completely <strong>${adjective3}</strong>, and there was a <strong>${noun3}</strong> stuck to my <strong>${bodypart}</strong>. I guess this is a sign to never cook again. I should just go back to my <strong>${noun4}</strong> and cry.`;
+            storyParagraphs[1].innerHTML = `I quickly <strong>${verb2}</strong> toward the stove! Sadly, I was too late. The kitchen was completely <strong>${adjective3}</strong>, and there was ${aOrAn(noun3)} <strong>${noun3}</strong> stuck to my <strong>${bodypart}</strong>. I guess this is a sign to never cook again. I should just go back to my <strong>${noun4}</strong> and cry.`;
             
 
             //_____________ Hide form and show story _____________

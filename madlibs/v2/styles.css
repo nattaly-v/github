@@ -267,11 +267,15 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    transform: translateY(-6px);
+    /* transform: translateY(-6px); */
+        transform: translateY(-3px) scale(1.05);
+
 }
 
 input[type="submit"]:active {
-    transform: translateY(-1px);
+    /* transform: translateY(-1px); */
+    transform: translateY(-1px) scale(1.08);
+
 }
 
 
@@ -350,9 +354,9 @@ input[type="submit"]:active {
 
 .story-text strong {
     font-weight: 700;
-    color:#c06c1c;
+    color: #7c301f;
+    background-color: burlywood;
 }
-
 
 
 /* ------------------------------------ Restart Button ------------------------------------ */
