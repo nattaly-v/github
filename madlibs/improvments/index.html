@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V2 Mad Libs</title>
+    
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@600&family=Poppins&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Oh No! Breakfast is Ruined!</h1>
+        <p>Don't cry over spilled milk. :D</p>
+    </header>
+
+    <main>
+        <img src="images/egg.svg" alt="egg" class="floating-img float-1">
+        <img src="images/bacon.svg" alt="bacon" class="floating-img float-2">
+        <img src="images/toast.svg" alt="toast" class="floating-img float-3">
+        <img src="images/waffle.svg" alt="waffle" class="floating-img float-4">
+        <img src="images/butter.svg" alt="butter" class="floating-img float-5">
+       
+        <section id="form-section" class="active">
+            <form id="madlib-form">
+                <h2>Fill in to see how breakfast was ruined!</h2>
+                
+                <div>
+                    <label for="adjective1">An adjective:</label>
+                    <input type="text" id="adjective1" placeholder="e.g., fast" required>
+                </div>
+
+                <div>
+                    <label for="noun1">A food item:</label>
+                    <input type="text" id="noun1" placeholder="e.g., egg" required>
+                </div>
+
+                <div>
+                    <label for="verb1">A past verb ending in -ed:</label>
+                    <input type="text" id="verb1" placeholder="e.g., cracked" required>
+                </div>
+
+                <div>
+                    <label for="adjective2">An adjective:</label>
+                    <input type="text" id="adjective2" placeholder="e.g., hot" required>
+                </div>
+
+                <div>
+                    <label for="noun2">A plural noun:</label>
+                    <input type="text" id="noun2" placeholder="e.g., pieces" required>
+                </div>
+
+                <div>
+                    <label for="verb2">A past verb ending in -ed:</label>
+                    <input type="text" id="verb2" placeholder="e.g., lunged" required>
+                </div>
+
+                <div>
+                    <label for="adjective3">An adjective:</label>
+                    <input type="text" id="adjective3" placeholder="e.g., messy" required>
+                </div>
+
+                <div>
+                    <label for="noun3">A noun:</label>
+                    <input type="text" id="noun3" placeholder="e.g., spoon" required>
+                </div>
+
+                <div>
+                    <label for="bodypart">A body part:</label>
+                    <input type="text" id="bodypart" placeholder="e.g., elbow" required>
+                </div>
+
+                <div>
+                    <label for="noun4">A noun:</label>
+                    <input type="text" id="noun4" placeholder="e.g., bed" required>
+                </div>
+
+                <input type="submit" value="Create My Story!">
+            </form>
+        </section>
+
+        <section id="story-section" class="overlay">
+            <article class="story-content">
+                <h2>Here is what happened...</h2>
+                <p class="story-text">
+                    The other morning I woke up and chose to make a ______ breakfast. I grabbed an ______from the fridge and ______ it into the pan on the stove. 
+                    Suddenly,______ ______ started flying everywhere!
+                </p>
+                <p class="story-text">
+                    I quickly ______ toward the stove! Sadly, I was too late. The kitchen was completely ______, 
+                    and there was a ______ stuck to my ______. I guess this is a sign to never cook again. I should just go back to my ______ and cry.
+                </p>
+                <button id="restart-btn">Make Another Story</button>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>A DES 157A Mad Libs Project</p>
+    </footer>
+</body>
+</html>
