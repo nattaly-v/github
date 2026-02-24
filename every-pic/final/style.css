@@ -1,0 +1,216 @@
+/* --------- Base Body & Layout --------- */
+
+body {
+    font-family: Georgia, serif;
+    color: #d4c5a0;
+    padding-bottom: 200px;
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 750px;
+}
+
+/* Consolidated Stage Backgrounds */
+.stage1, .stage2, .stage3, .stage4 {
+    background: #1a1a2e;
+}
+
+/* Global Transition Rule for smooth stage changes */
+body, section, section img, section h2, .stage-number, .stage-description {
+    transition: all 1s ease;
+}
+
+/* --------- Sticky Header --------- */
+header {
+    height: 100px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 20px;
+    background: #16213ef2;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    z-index: 100;
+    border-bottom: 2px solid rgba(244, 232, 208, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #f4e8d0;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    color: #c9b591;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* --------- Sections & Content --------- */
+section {
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 30px 40px;
+    padding: 50px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --------- Image Container (matches example pattern) --------- */
+.img-container {
+    max-width: 600px;
+    width: 100%;
+    aspect-ratio: 800 / 800;
+    position: relative;
+    margin: auto;
+}
+
+img, svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+svg {
+    opacity: 0;
+}
+
+section img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.stage-number {
+    font-size: 0.8rem;
+    color: #8a8a9a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    padding-top: 50px;
+
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #f4e8d0;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin: 5px 0 15px 0;
+}
+
+.stage-description {
+    font-size: 1rem;
+    color: #c9b591;
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 550px;
+}
+
+/* --------- Interaction: Note Bubbles --------- */
+.note-bubble {
+    position: absolute;
+    background: #f4e8d0;
+    color: #1a1a2e;
+    padding: 15px 20px;
+    border-radius: 15px;
+    width: 220px;
+    font-size: 0.9rem;
+    font-style: italic;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 50;
+    pointer-events: none;
+    top: 50%;
+    right: -260px;
+    transform: translateY(-50%) scale(0.8);
+}
+
+.note-bubble.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) scale(1);
+}
+
+/* --------- Scroll States: Offscreen vs Onscreen --------- */
+.offscreen {
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+.offscreen img {
+    opacity: 0.5;
+    max-height: 250px;
+}
+
+.offscreen h2 { font-size: 1.6rem; }
+.offscreen .stage-description { font-size: 0.9rem; }
+
+.onscreen {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.onscreen img {
+    opacity: 1;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
+    max-height: 400px;
+}
+
+.onscreen h2 { font-size: 2.4rem; }
+.onscreen .stage-description { font-size: 1.1rem; }
+
+/* --------- Footer --------- */
+footer {
+    background-color: #16213ef2;
+    max-width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0 auto;
+}
+
+footer a {
+    border-radius: 20px;
+    background-color: #c9b591;
+    color: #1a1a2e;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --------- Responsive --------- */
+@media (max-width: 760px) {
+    header h1 { font-size: 1.5rem; letter-spacing: 3px; }
+    section { margin: 30px 20px; padding: 30px 20px; }
+    .onscreen h2 { font-size: 2rem; }
+    .offscreen h2 { font-size: 1.5rem; }
+    .note-bubble {
+        right: 0;
+        left: 0;
+        margin: 20px auto;
+        top: 100%;
+        transform: translateY(0) scale(0.8);
+    }
+    .note-bubble.visible { transform: translateY(0) scale(1); }
+}
