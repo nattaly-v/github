@@ -42,15 +42,8 @@
                 s.className = (i + 1 === counter) ? 'onscreen' : 'offscreen';
             });
 
-            const subTitles = {
-                1: "Stage I: The Call to Adventure",
-                2: "Stage II: Crossing the Threshold",
-                3: "Stage III: The Road of Trials",
-                4: "Stage IV: The Ultimate Boon"
-            };
-            headerP.innerHTML = subTitles[counter];
 
-            // Auto-hide all bubbles when switching sections
+            // Hides all bubbles when switching between sections
             const allBubbles = document.querySelectorAll('.note-bubble');
             allBubbles.forEach(bubble => {
                 bubble.classList.remove('visible');
@@ -286,6 +279,26 @@
         variety7.addEventListener('pointerleave', function () {
             variety_mainImg.src = 'images/variety.jpg';
             variety_bubble.classList.remove('visible');
+        });
+        
+// --------- Stage IV: Classic Book Interaction ---------
+
+        const classicMainImg = document.querySelector('#section04 img');
+        const classicBubble = document.querySelector('#section04 .note-bubble');
+
+        const classic1 = document.querySelector('#classic1');
+
+         classic1.addEventListener('pointerenter', function () {
+            classicMainImg.src = 'images/classic-2.jpg';
+            classicBubble.innerText = 'Placeholder text';
+            classicBubble.classList.add('visible');
+            setTimeout(function () {
+                classicBubble.classList.remove('visible');
+            }, 4000);
+        });
+        classic1.addEventListener('pointerleave', function () {
+            classicMainImg.src = 'images/classic.jpg';
+            classicBubble.classList.remove('visible');
         });
 
         // --------- Cleanup on Resize ---------

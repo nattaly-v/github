@@ -7,11 +7,15 @@ body {
     margin: 0 auto;
     max-width: 1200px;
     height: 750px;
+
 }
 
 /* Consolidated Stage Backgrounds */
 .stage1, .stage2, .stage3, .stage4 {
-    background: #1a1a2e;
+    /* background: #1a1a2e; */
+    background: #3D6B6F;
+
+    
 }
 
 /* Global Transition Rule for smooth stage changes */
@@ -27,7 +31,7 @@ header {
     width: 100%;
     max-width: 1200px;
     padding-bottom: 20px;
-    background: #16213ef2;
+    background: #22333B;
     display: grid;
     place-content: center;
     text-align: center;
@@ -67,20 +71,25 @@ section {
 }
 
 /* --------- Image Container (matches example pattern) --------- */
+
 .img-container {
     max-width: 600px;
     width: 100%;
-    aspect-ratio: 800 / 800;
     position: relative;
     margin: auto;
 }
+
+.ggs-container     { aspect-ratio: 800 / 800; }
+.spines-container  { aspect-ratio: 600 / 800; }
+.variety-container { aspect-ratio: 600 / 875; }
+.classic-container { aspect-ratio: 800 / 900; }
 
 img, svg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 60%;
 }
 
 svg {
@@ -94,6 +103,8 @@ section img {
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    background: #22333B;
+
 }
 
 .stage-number {
@@ -152,7 +163,7 @@ section h2 {
 /* --------- Scroll States: Offscreen vs Onscreen --------- */
 .offscreen {
     opacity: 0.6;
-    transform: scale(0.95);
+    transform: scale(0.90);
 }
 
 .offscreen img {
@@ -171,8 +182,8 @@ section h2 {
 .onscreen img {
     opacity: 1;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-    margin-top: 20px;
-    max-height: 400px;
+    /* margin-top: 20px;
+    max-height: 400px; */
 }
 
 .onscreen h2 { font-size: 2.4rem; }
