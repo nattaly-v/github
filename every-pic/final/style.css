@@ -11,21 +11,29 @@ body {
 }
 
 /* Consolidated Stage Backgrounds */
-.stage1, .stage2, .stage3, .stage4 {
+.stage1,
+.stage2,
+.stage3,
+.stage4 {
     /* background: #1a1a2e; */
     background: #3D6B6F;
 
-    
+
 }
 
 /* Global Transition Rule for smooth stage changes */
-body, section, section img, section h2, .stage-number, .stage-description {
+body,
+section,
+section img,
+section h2,
+.stage-number,
+.stage-description {
     transition: all 1s ease;
 }
 
 /* --------- Sticky Header --------- */
 header {
-    height: 100px;
+    height: 150px;
     position: sticky;
     top: 0;
     width: 100%;
@@ -37,10 +45,12 @@ header {
     text-align: center;
     z-index: 100;
     border-bottom: 2px solid rgba(244, 232, 208, 0.2);
+    text-align: center;
 }
 
 header h1 {
     margin: 0;
+    margin-top: 20px;
     font-size: 1.8rem;
     color: #f4e8d0;
     font-weight: 300;
@@ -49,7 +59,7 @@ header h1 {
 }
 
 header p {
-    margin: 5px 0 0 0;
+    margin: 20px 0 0 0;
     font-size: 0.9rem;
     color: #c9b591;
     font-style: italic;
@@ -79,12 +89,24 @@ section {
     margin: auto;
 }
 
-.ggs-container     { aspect-ratio: 800 / 800; }
-.spines-container  { aspect-ratio: 600 / 800; }
-.variety-container { aspect-ratio: 600 / 875; }
-.classic-container { aspect-ratio: 800 / 900; }
+.ggs-container {
+    aspect-ratio: 800 / 800;
+}
 
-img, svg {
+.spines-container {
+    aspect-ratio: 600 / 800;
+}
+
+.variety-container {
+    aspect-ratio: 600 / 875;
+}
+
+.classic-container {
+    aspect-ratio: 800 / 900;
+}
+
+img,
+svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -109,7 +131,7 @@ section img {
 
 .stage-number {
     font-size: 0.8rem;
-    color: #8a8a9a;
+    color: #f4e8d0;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 5px;
@@ -122,12 +144,12 @@ section h2 {
     color: #f4e8d0;
     font-weight: 300;
     letter-spacing: 3px;
-    margin: 5px 0 15px 0;
+    margin: 5px 0 0px 0;
 }
 
 .stage-description {
     font-size: 1rem;
-    color: #c9b591;
+    color: #c9bca6;
     font-style: italic;
     line-height: 1.5;
     max-width: 550px;
@@ -139,25 +161,48 @@ section h2 {
     background: #f4e8d0;
     color: #1a1a2e;
     padding: 15px 20px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     width: 220px;
+    height: 410px;
     font-size: 0.9rem;
     font-style: italic;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 50;
     pointer-events: none;
-    top: 50%;
-    right: -260px;
+    top: 30%;
+    right: -270px;
     transform: translateY(-50%) scale(0.8);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.bubble-title {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: #22333B;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+}
+
+.bubble-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    color: #444;
 }
 
 .note-bubble.visible {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-50%) scale(1);
+    /* transform: translateY(-50%) scale(1); */
+    z-index: 999;
 }
 
 /* --------- Scroll States: Offscreen vs Onscreen --------- */
@@ -171,8 +216,13 @@ section h2 {
     max-height: 250px;
 }
 
-.offscreen h2 { font-size: 1.6rem; }
-.offscreen .stage-description { font-size: 0.9rem; }
+.offscreen h2 {
+    font-size: 1.6rem;
+}
+
+.offscreen .stage-description {
+    font-size: 0.9rem;
+}
 
 .onscreen {
     opacity: 1;
@@ -186,8 +236,13 @@ section h2 {
     max-height: 400px; */
 }
 
-.onscreen h2 { font-size: 2.4rem; }
-.onscreen .stage-description { font-size: 1.1rem; }
+.onscreen h2 {
+    font-size: 2.4rem;
+}
+
+.onscreen .stage-description {
+    font-size: 1.1rem;
+}
 
 /* --------- Footer --------- */
 footer {
@@ -210,18 +265,3 @@ footer a {
     font-weight: bold;
 }
 
-/* --------- Responsive --------- */
-@media (max-width: 760px) {
-    header h1 { font-size: 1.5rem; letter-spacing: 3px; }
-    section { margin: 30px 20px; padding: 30px 20px; }
-    .onscreen h2 { font-size: 2rem; }
-    .offscreen h2 { font-size: 1.5rem; }
-    .note-bubble {
-        right: 0;
-        left: 0;
-        margin: 20px auto;
-        top: 100%;
-        transform: translateY(0) scale(0.8);
-    }
-    .note-bubble.visible { transform: translateY(0) scale(1); }
-}
