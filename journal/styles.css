@@ -1,6 +1,6 @@
-*{
+/* *{
     box-sizing: border-box;
-}
+} */
 .container {
     max-width: 900px; 
     margin: 0 auto;   
@@ -23,6 +23,8 @@ header h1{
     font-family: Syne;
     font-size: 3em;
     color: #E1CEB3;
+    text-align: center;
+    padding: 10px;
 
 }
 

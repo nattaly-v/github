@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+
+}
+
+main {
+    max-width: 1200px;
+    background-color:#ABF2EF ;
+    height: auto;
+}
+
+
+h1{
+    text-align: center;
+    padding: 10px;
+
+}
+body {
+    font-family: Arial;
+    color: #333;
+    text-align: center;
+    height: 750px;
+}
+
+p button {
+    padding: 10px;
+}
+
+div {
+    padding: 20px;
+}
+
+#gamecontrol,
+#score {
+    background-color: aliceblue;
+
+}
+
+#game {
+    background-color: #eaeaea;
+}
+
+#actions {
+    background-color: silver;
+}
+
+footer p {
+    margin: 0 auto;
+    text-align: center;
+    /* padding: 3%; */
+}
+
+footer a {
+    border-radius: 20px;
+    background-color: #6D8178ff;
+    color: #E1CEB3;
+    padding: 12px 24px;
+}
+
+footer {
+    background-color: #576E47;
+    padding-top: 8px;
+}
