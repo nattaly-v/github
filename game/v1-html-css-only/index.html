@@ -6,42 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game of PIG</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-
     <main>
-        <h1>Game of PIG</h1>
-        
-        <div id="gamecontrol">
-            <h2>Start a Game</h2>
-            <button id="startgame">Randomly Pick the First Player, and Start the Game</button>
+
+        <!-- SKY -->
+        <div id="sky">
+            <img src="#" alt="" class="cloud left" width=" " height=" ">
+            <img src="#" alt="" class="cloud right" width=" " height=" ">
         </div>
 
-        <div id="game">
-            <h2>Player 1's Turn</h2>
-        </div>
+        <!-- HEADER SIGN -->
+        <header id="sign">
+            <div id="board">
+                <h1>Game of Pig</h1>
+                <h2 id="turn">Press Start to Begin</h2>
 
-        <div id="actions">
-            <h2>Roll the Dice</h2>
-        </div>
+            </div>
+        </header>
 
-        <div id="score">
-            <h2>11</h2>
-        </div>
+        <!-- SCENE -->
+        <section id="scene">
 
-        <div id="score2">
-            <h2> 23</h2>
-        </div>
+            <!-- PLAYER 1 -->
+            <div class="side" id="p1">
+                <div class="card-1" id="p1-card">
+                    <p class="name">Player 1</p>
+                    <p class="score" id="p1-score">0</p>
+                </div>
+                <img src="images/post-1.svg" alt="" class="post-1" width="268.97" height="434.92">
+            </div>
+
+            <!-- GROUND -->
+            <div id="ground">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+                <img src="images/flower.svg" alt="" class="flower" width="73.74" height="96.29">
+            </div>
+
+
+
+            <!-- BARNS / DICE -->
+            <div id="barns">
+
+                <!-- LEFT BARN = Die 1 -->
+                <div class="barn">
+                    <div class="barn-img-wrap">
+                        <img src="images/barn-left.svg" alt="Left barn" class="barn-img" width="191" height="456">
+                        <img src="images/die-6.svg" alt="Die showing 6" id="die6" class="die-img" width="191"
+                            height="456" height="114">
+                    </div>
+                    <button type="button" id="btn-roll">roll</button>
+                </div>
+
+                <!-- RIGHT BARN = Die 2 -->
+                <div class="barn">
+                    <div class="barn-img-wrap">
+                        <img src="images/barn-right.svg" alt="Right barn" class="barn-img" width="191" height="456">
+                        <img src="images/die-1.svg" alt="Die showing 1" id="die1" class="die-img" width="191"
+                            height="456" height="114">
+                    </div>
+                    <button type="button" id="btn-pass">pass</button>
+                </div>
+
+            </div>
+
+            <!-- PLAYER 2 -->
+            <div class="side" id="p2">
+                <img src="images/post-2.svg" alt="" class="post-2" width="268.97" height="434.92">
+                <div class="card-2" id="p2-card">
+                    <p class="name">Player 2</p>
+                    <p class="score" id="p2-score">2</p>
+                </div>
+            </div>
+
+        </section>
+
+
 
     </main>
-</body>
 
-<footer>
-    <p><a href="/index.html">Back to Portal Page</a></p>
-</footer>
+    <footer>
+        <p><a href="/index.html">Back to Portal Page</a></p>
+    </footer>
+
+</body>
 
 </html>

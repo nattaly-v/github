@@ -1,63 +1,218 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family:'Nunito', sans-serif;
+    width: 1200px;
+    height: 750px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-    max-width: 1200px;
-    background-color:#ABF2EF ;
-    height: auto;
+    position: relative;
+    flex: 1;
+    overflow: hidden;
 }
 
+#sky {
+    position: absolute;
+    inset: 0;
+    background-color: #7ee8e8;
+    z-index: 0;
+}
 
-h1{
+.cloud {
+    position: absolute;
+}
+
+.cloud.left {
+   
+}
+
+.cloud.right {
+   
+}
+/* -------------------- HEADER  -------------------- */
+
+#sign {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#board {
+    background-color: #6b3f22;
+    color: white;
     text-align: center;
-    padding: 10px;
+    padding: 12px 44px 14px;
+    border-radius: 4px;
+    min-width: 360px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+#board h1 {
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+#turn {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 4px;
+    color: #f0d9c0;
+}
+
+/*-------------------- SCENE --------------------*/
+#scene {
+    position: absolute;
+    bottom: 85px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 5;
+}
+
+
+/* -------------------- PLAYER SIDES --------------------*/
+.side {
+    display: flex;
+    align-items: flex-end;
+}
+
+.post-1 {
+    flex-shrink: 0;
+    margin-right: 60px;
 
 }
-body {
-    font-family: Arial;
-    color: #333;
+
+.post-2 {
+    margin-left: 60px;
+}
+
+.card-1 {
+    background-color: #6b3f22;
+    width: 128.19px;
+    height: 65.87px;
+    color: white;
     text-align: center;
-    height: 750px;
-}
-
-p button {
-    padding: 10px;
-}
-
-div {
-    padding: 20px;
-}
-
-#gamecontrol,
-#score {
-    background-color: aliceblue;
+    padding: 8px 30px 8px;
+    margin-bottom: 263px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+    transform: translateX(227px) translateY(-20px);
 
 }
 
-#game {
-    background-color: #eaeaea;
-}
-
-#actions {
-    background-color: silver;
-}
-
-footer p {
-    margin: 0 auto;
+.card-2 {
+    background-color: #6b3f22;
+    width: 128.19px;
+    height: 65.87px;
+    color: white;
     text-align: center;
-    /* padding: 3%; */
+    padding: 8px 30px 8px;
+    margin-bottom: 263px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+    transform: translateX(-227px) translateY(-20px);
+
+}
+
+
+.card .score {
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+
+/* -------------------- BARNS + DICE -------------------- */
+#barns {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.barn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barn-img-wrap {
+    position: relative;
+    display: block;
+    line-height: 0;
+}
+
+.barn-img {
+    position: inherit;
+    display: block;
+    top: 42px;
+    left: 50%;
+    gap: 20px;
+    transform: translateX(-50%);
+}
+
+.die-img {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+}
+
+
+/* -------------------- GROUND + FLOWERS -------------------- */
+#ground {
+    position: absolute;
+    bottom: -85px;
+    left: 0;
+    right: 0;
+    height: 88px;
+    background-color: #5a7a3a;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.flower {
+    margin-top: -28px;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    background-color:#576E47;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #3a4f32;
+    flex-shrink: 0;
 }
 
 footer a {
     border-radius: 20px;
-    background-color: #6D8178ff;
+    background-color: #6D8178;
     color: #E1CEB3;
-    padding: 12px 24px;
+    padding: 6px 22px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
 }
 
-footer {
-    background-color: #576E47;
-    padding-top: 8px;
+footer a:hover {
+    background-color: #7a9088;
 }
