@@ -68,20 +68,7 @@ main {
     color: #f0d9c0;
 }
 
-/*------------------------------------------------------------ START PAGE ------------------------------------------------------------ */
-.button1{
-    background-color: #6b3f22;
-}
-
-
-
-
-
-
-
-
-
-/*------------------------------------------------------------ GAME PAGE ------------------------------------------------------------ */
+/*-------------------- SCENE --------------------*/
 #scene {
     position: absolute;
     bottom: 85px;
@@ -91,7 +78,6 @@ main {
     align-items: flex-end;
     justify-content: center;
     z-index: 5;
-    /* visibility: hidden; */
 }
 
 
@@ -155,8 +141,6 @@ main {
     display: flex;
     gap: 8px;
     align-items: flex-end;
-    visibility: hidden;
-    
 }
 
 .barn {
