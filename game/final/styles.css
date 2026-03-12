@@ -8,8 +8,8 @@
 
 body {
     font-family: 'Nunito', sans-serif;
-    width: 1200px;
-    height: 750px;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -21,6 +21,7 @@ main {
     overflow: hidden;
 }
 
+/* ── SKY ── */
 #sky {
     position: absolute;
     inset: 0;
@@ -28,13 +29,11 @@ main {
     z-index: 0;
 }
 
-
 .clouds {
     transform: translateX(3%) translateY(11%);
 }
 
-/* -------------------- HEADER  -------------------- */
-
+/* ── SIGN ── */
 #sign {
     position: absolute;
     top: 0;
@@ -50,9 +49,9 @@ main {
     background-color: #6b3f22;
     color: white;
     text-align: center;
-    padding: 12px 44px 14px;
     border-radius: 4px;
     min-width: 360px;
+    height: 69px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
@@ -61,14 +60,49 @@ main {
     font-weight: 900;
 }
 
-#turn {
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-top: 4px;
+/* ── GAMECONTROL ── */
+#gamecontrol {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: #6b3f22;
     color: #f0d9c0;
+    text-align: center;
+    padding: 8px 28px 10px;
+    border-radius: 0 0 6px 6px;
+    min-width: 306px;
 }
 
-/*-------------------- SCENE --------------------*/
+#gamecontrol h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+#gamecontrol button,
+#startgame,
+#quit {
+    background-color: #a0522d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 18px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#gamecontrol button:hover,
+#startgame:hover,
+#quit:hover {
+    background-color: #c0622d;
+}
+
+/* ── SCENE ── */
 #scene {
     position: absolute;
     bottom: 85px;
@@ -80,8 +114,7 @@ main {
     z-index: 5;
 }
 
-
-/* -------------------- PLAYER SIDES --------------------*/
+/* ── PLAYER SIDES ── */
 .side {
     display: flex;
     align-items: flex-end;
@@ -90,53 +123,46 @@ main {
 .post-1 {
     flex-shrink: 0;
     margin-right: 60px;
-
 }
 
 .post-2 {
     margin-left: 60px;
 }
 
-.card-1 {
-    background-color: #6b3f22;
-    width: 128.19px;
-    height: 65.87px;
-    color: white;
-    text-align: center;
-    padding: 13px 30px 8px;
-    margin-bottom: 263px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
-    transform: translateX(227px) translateY(-20px);
-
-}
-
+.card-1,
 .card-2 {
     background-color: #6b3f22;
-    width: 128.19px;
-    height: 65.87px;
+    width: 128px;
+    min-height: 66px;
     color: white;
     text-align: center;
-    padding: 13px 30px 8px;
+    padding: 10px 20px;
     margin-bottom: 263px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
-    transform: translateX(-227px) translateY(-20px);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
+
+.card-1 { transform: translateX(227px) translateY(-20px); }
+.card-2 { transform: translateX(-227px) translateY(-20px); }
 
 .name {
-    font-family: 'Nunito', sans-serif;
-    font-size: 18px
-    ;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-
-.card .score {
-    font-size: 2.4rem;
+.pts {
+    font-size: 1.6rem;
     font-weight: 900;
-    line-height: 1;
+    line-height: 1.1;
 }
 
+#p1.active-player .card-1,
+#p2.active-player .card-2 {
+    background-color: #a0522d;
+    box-shadow: 0 0 0 3px #ffe0b2, 0 3px 10px rgba(0, 0, 0, 0.4);
+}
 
-/* -------------------- BARNS + DICE -------------------- */
+/* ── BARNS ── */
 #barns {
     display: flex;
     gap: 8px;
@@ -156,24 +182,75 @@ main {
 }
 
 .barn-img {
-    position: inherit;
     display: block;
-    top: 42px;
-    left: 50%;
-    gap: 20px;
-    transform: translateX(-50%);
 }
 
 .die-img {
     position: absolute;
-    top: 85px;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
     display: block;
 }
 
+/* ── GAME MESSAGE ── */
+#game {
+    position: absolute;
+    background-color: #6b3f22;
+    top: 97.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48vh;
+    height: 3vh;
+    text-align: center;
+    color: #E1CEB3;
+    font-size: 1.2rem;
+    font-weight: 700;
+    z-index: 100;
+}
 
-/* -------------------- GROUND + FLOWERS -------------------- */
+#game p {
+    margin: -3px;
+}
+
+/* ── ACTIONS ── */
+#actions {
+    position: absolute;
+    background-color: #ffe0b2;
+    height: 5vh;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 90px;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#actions button {
+    background-color: #6b3f22;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s;
+}
+
+#actions button:hover {
+    background-color: #8b5a2b;
+}
+
+/* ── GROUND ── */
 #ground {
     position: absolute;
     bottom: -85px;
@@ -191,7 +268,89 @@ main {
     margin-top: -28px;
 }
 
-/* -------------------- FOOTER -------------------- */
+/* ════════════════════════════════════════
+   OVERLAYS
+   ════════════════════════════════════════ */
+
+/* Shared overlay backdrop — covers the whole screen */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    /* fade in/out */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* The box that sits in the middle of the overlay */
+.overlay-box {
+    background-color: #6b3f22;
+    color: #f0d9c0;
+    border-radius: 10px;
+    padding: 32px 48px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    min-width: 300px;
+    animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+.overlay-box p {
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* ── PENALTY overlay (1s / snake eyes) ── */
+#overlay-penalty .overlay-box {
+    background-color: #8b2020;  /* red-brown for bad news */
+    border: 3px solid #ffaaaa;
+}
+
+/* ── WINNER overlay ── */
+#overlay-winner .overlay-box {
+    background-color: #3a6b22;  /* green for winning */
+    border: 3px solid #b2ffaa;
+}
+
+#overlay-winner-msg {
+    font-size: 1.8rem;
+    margin-bottom: 20px !important;
+}
+
+#overlay-newgame {
+    background-color: #f0d9c0;
+    color: #3a6b22;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 28px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.2s;
+}
+
+#overlay-newgame:hover {
+    background-color: #ffffff;
+}
+
+/* ── FOOTER ── */
 footer {
     background-color: #576E47;
     height: 42px;
